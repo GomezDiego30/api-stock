@@ -14,3 +14,5 @@ app.get("/api/health-check", (_req, res) => {
 
 // Exportar el servidor para usarlo en index.ts
 export { app };
+
+//haciendo cagadas
