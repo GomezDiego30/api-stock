@@ -7,6 +7,13 @@ router.get("/", (_req, res) => {
   res.json(products);
 });
 
+
+router.get("/api/products", (_req, res) => {
+  res.json(products);
+});
+
+
+
 export { router as productsRouter };
 
 // INTRODUCCION A TYPESCRIPT
