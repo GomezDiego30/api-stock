@@ -8,3 +8,5 @@ router.get("/", (_req, res) => {
 });
 
 export { router as productsRouter };
+
+// INTRODUCCION A TYPESCRIPT
