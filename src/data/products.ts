@@ -1,7 +1,7 @@
 export const products = [
     {
       id: 1,
-      title: "Laptop",
+      title: "laptop",
       brand: "Apple",
       category: "Electronics",
       price: 1299.99,
