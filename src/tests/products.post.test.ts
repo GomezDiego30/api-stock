@@ -8,7 +8,7 @@ describe("POST /api/products", () => {
 
 
     const newProduct = {
-      id: "11",
+      
       title: "Smart Speaker",
       brand: "Google",
       category: "Electronics",
@@ -24,3 +24,4 @@ describe("POST /api/products", () => {
     expect(response.body).toMatchObject(newProduct);
   });
 });
+

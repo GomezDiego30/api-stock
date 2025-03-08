@@ -80,3 +80,6 @@ export const products = [
       stock: 10,
     },
   ];
+
+ console.log(products.length) 
+ 
