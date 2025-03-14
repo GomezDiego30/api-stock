@@ -1,7 +1,7 @@
 import request from 'supertest'
 import { describe, expect, it } from 'vitest'
-import { app } from '../libs/server'
 import { products } from '../data/products'
+import { app } from '../libs/server'
 
 describe('POST /api/products', () => {
 	it('should create a new product', async () => {

@@ -10,6 +10,6 @@ productsRoutes.get('/', getAllProductsController)
 
 productsRoutes.post('/', createProductController)
 
-productsRoutes.delete('/', deleteProductController)
+productsRoutes.delete('/:id', deleteProductController)
 
-productsRoutes.put('/', updateProductController)
+productsRoutes.put('/:id', updateProductController)
