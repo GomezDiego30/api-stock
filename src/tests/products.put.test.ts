@@ -22,4 +22,3 @@ describe("PUT /api/products/:id", () => {
     expect(response.body).toMatchObject(updatedProduct);
   });
 });
-
