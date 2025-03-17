@@ -1,5 +1,8 @@
-import { createProductService } from '../services/products.create.service'
+import { Request, Response } from "express";
+import { createProductService } from "../services/products.create.service";
 
 export const createProductController = (req: Request, res: Response) => {
-	createProductService(req, res)
-}
+  const body = req.body;
+  const response = createProductService(body);
+  res.status(201).json(response);
+};
