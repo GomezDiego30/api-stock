@@ -1,5 +1,4 @@
 import { products } from '../../../data/products'
-import { productsRoutes } from '../products.routes'
 
 // El .post ya lo tenes en el archivo de routes, no hace falta que repitas eso
 /* productsRoutes.post('/', (req, res) => {
