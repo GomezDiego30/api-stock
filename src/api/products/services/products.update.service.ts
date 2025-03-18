@@ -1,9 +1,9 @@
 import { products } from '../../../data/products'
 
-export const updateProductService = (req: Request, res: Response) => {
-	const productId = Number(req.params.id)
-	const updateProduct = req.body
-	const product = products.find((product) => product.id === productId)
-	products[product] = updateProduct
-	res.status(200).json(updateProduct)
+export const updateProductService = (body: any) => {
+	const productId = body.id
+	const updateProduct = body
+	const productIndex = products.findIndex((product) => product.id === productId)
+	products[productIndex] = updateProduct
+	return updateProduct
 }
