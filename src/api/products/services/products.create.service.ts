@@ -1,8 +1,21 @@
-import { products } from '../../../data/products'
+import { PrismaClient } from '@prisma/client'
 
-export const createProductService = (body: any) => {
-	const newProduct = body
-	newProduct.id = products.length + 1
-	products.push(newProduct)
-	return newProduct
+const prisma = new PrismaClient()
+
+export const createProductService = async (body: any) => {
+	try {
+		const newProduct = await prisma.product.create({
+			data: {
+				name: body.name,
+				price: body.price,
+				description: body.description,
+				stock: body.stock,
+			},
+		})
+
+		return newProduct
+	} catch (error) {
+		console.error('Error creating product:', error)
+		throw new Error('Failed to create product')
+	}
 }
