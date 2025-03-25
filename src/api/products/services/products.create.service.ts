@@ -4,18 +4,19 @@ const prisma = new PrismaClient()
 
 export const createProductService = async (body: any) => {
 	try {
+		console.log('producto recibido')
 		const newProduct = await prisma.product.create({
 			data: {
-				name: body.name,
+				title: body.title,
 				price: body.price,
-				description: body.description,
 				stock: body.stock,
+				brandId: body.brandId,
+				categoryId: body.categoryId,
 			},
 		})
-
 		return newProduct
 	} catch (error) {
 		console.error('Error creating product:', error)
-		throw new Error('Failed to create product')
+		throw new Error('Could not create product')
 	}
 }

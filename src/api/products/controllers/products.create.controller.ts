@@ -1,8 +1,12 @@
 import { Request, Response } from 'express'
 import { createProductService } from '../services/products.create.service'
 
-export const createProductController = (req: Request, res: Response) => {
-	const body = req.body
-	const response = createProductService(body)
-	res.status(201).json(response)
+export const createProductController = async (req: Request, res: Response) => {
+	try {
+		const product = await createProductService(req.body)
+		res.status(201).json(product)
+	} catch (error) {
+		console.error('Error creando el producto:', error)
+		res.status(500).json({ message: 'producto no creado' })
+	}
 }
