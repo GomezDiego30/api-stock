@@ -4,7 +4,7 @@ const prisma = new PrismaClient()
 
 export const getAllProductsService = async (body: any) => {
 	try {
-		const products = await prisma.product.findMany({})
+		const products = await prisma.product.findMany()
 
 		return products
 	} catch (error) {

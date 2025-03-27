@@ -1,8 +1,15 @@
-import { products } from '../../../data/products'
+import { PrismaClient } from '@prisma/client'
 
-export const deleteProductService = (body: any) => {
-	const productId = Number(body)
-	const product = products.findIndex((product) => product.id === productId)
-	products.splice(product, 1)
-	return { message: 'Producto eliminado' }
+const prisma = new PrismaClient()
+
+export const deleteProductService = async (body: any) => {
+	try {
+		const deleteProduct = await prisma.product.delete({
+			where: { id: body.id },
+		})
+		return deleteProduct
+	} catch (error) {
+		console.error('Error deleting product:', error)
+		throw new Error('Could not delete product')
+	}
 }
